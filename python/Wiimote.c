@@ -559,7 +559,7 @@ static PyObject *Wiimote_get_state(Wiimote* self, void *closure)
 		break;
 	case CWIID_EXT_MOTIONPLUS:
 		if (state.rpt_mode & CWIID_RPT_MOTIONPLUS) {
-			PyExt = Py_BuildValue("{s:(I,I,I)",
+			PyExt = Py_BuildValue("{s:(I,I,I)}",
 		                          "angle_rate",
                                   state.ext.motionplus.angle_rate[CWIID_PHI],
                                   state.ext.motionplus.angle_rate[CWIID_THETA],
@@ -1001,7 +1001,7 @@ PyObject *ConvertMesgArray(int mesg_count, union cwiid_mesg mesg[])
 			               mesg[i].balance_mesg.left_bottom);
 			break;
 		case CWIID_MESG_MOTIONPLUS:
-			mesgVal = Py_BuildValue("{s:(I,I,I)",
+			mesgVal = Py_BuildValue("{s:(I,I,I)}",
 			                        "angle_rate",
                                     mesg[i].motionplus_mesg.angle_rate[CWIID_PHI],
                                     mesg[i].motionplus_mesg.angle_rate[CWIID_THETA],
