@@ -1005,7 +1005,7 @@ PyObject *ConvertMesgArray(int mesg_count, union cwiid_mesg mesg[])
 			                        "angle_rate",
                                     mesg[i].motionplus_mesg.angle_rate[CWIID_PHI],
                                     mesg[i].motionplus_mesg.angle_rate[CWIID_THETA],
-                                    mesg[i].motionplus_mesg.angle_rate[CWIID_PSI];
+                                    mesg[i].motionplus_mesg.angle_rate[CWIID_PSI]);
                                     
 			break;
 		case CWIID_MESG_ERROR:
